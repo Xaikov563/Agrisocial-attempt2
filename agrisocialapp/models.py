@@ -12,6 +12,7 @@ class UserProfile(models.Model):
     follows = models.ManyToManyField("self", related_name='followed_by', symmetrical=False , blank=True)
     location = models.CharField(max_length=255, blank=True, null=True)
     has_membership = models.BooleanField(default=False)  # NEW FIELD
+    has_died = models.BooleanField(default=False)  # NEW FIELD
 
     def __str__(self):
         return self.user.username
